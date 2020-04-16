@@ -1,8 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <label for="status">Filtered status</label>
-      <input type="text" id="status" class="form-control" [(ngModel)]="filteredStatus">
+      <div class="form-group">
+        <div class="form-group">
+          <label for="status">Select list:</label>
+          <select class="form-control" id="status" [(ngModel)]="filteredStatus">
+            <option *ngFor="let status of statuses" [value]="status.value">
+              {{ status.name }}
+            </option>
+          </select>
+        </div>
+      </div>
       <hr>
       <ul class="list-group">
         <li

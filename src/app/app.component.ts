@@ -9,6 +9,12 @@ import { Server } from './server.model';
 })
 export class AppComponent {
   filteredStatus = '';
+  statuses = [
+    {name: 'All', value: ''},
+    {name: 'Stable', value: 'stable'},
+    {name: 'Offline', value: 'offline'},
+    {name: 'Critical', value: 'critical'}
+  ];
   servers = [
     new Server('medium', 'Production', 'critical', new Date(1989, 0, 20)),
     new Server('large', 'User Database', 'stable', new Date(1989, 0, 20)),
