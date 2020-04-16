@@ -10,7 +10,7 @@ export class AppComponent {
     {
       instanceType: 'medium',
       name: 'Production Server',
-      status: 'stable',
+      status: 'critical',
       started: new Date(15, 1, 2017)
     },
     {
