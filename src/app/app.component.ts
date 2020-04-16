@@ -8,15 +8,18 @@ import { Server } from './server.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  appStatus = new Promise<string>(((resolve, reject) => {
+    setTimeout(() => {
+      resolve('stable');
+    }, 2000);
+  }));
   filteredStatus = '';
-
   statuses = [
     {name: 'All', value: ''},
     {name: 'Stable', value: 'stable'},
     {name: 'Offline', value: 'offline'},
     {name: 'Critical', value: 'critical'}
   ];
-
   servers = [
     // new Server('medium', 'Production', 'critical', new Date(1989, 0, 20)),
     new Server('large', 'User Database', 'stable', new Date(1989, 0, 20)),
@@ -24,7 +27,7 @@ export class AppComponent {
     new Server('small', 'Testing Environment Server', 'stable', new Date(1989, 0, 20))
   ];
 
-  getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
+  getStatusClasses(server: { instanceType: string, name: string, status: string, started: Date }) {
     return {
       'list-group-item-success': server.status === 'stable',
       'list-group-item-warning': server.status === 'offline',
