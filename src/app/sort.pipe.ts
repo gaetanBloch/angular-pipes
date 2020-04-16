@@ -3,16 +3,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Server } from './server.model';
 
 @Pipe({
-  name: 'sort'
+  name: 'sort',
+  pure: false
 })
 export class SortPipe implements PipeTransform {
 
-  transform(servers: Server[]): Server[] {
+  transform(servers: Server[], propName: string = 'name'): Server[] {
     return servers.sort((a, b) => {
-      if (a.name < b.name ) {
+      if (a[propName] < b[propName] ) {
         return -1;
       }
-      if (a.name > b.name) {
+      if (a[propName] > b[propName]) {
         return 1;
       }
       return 0;

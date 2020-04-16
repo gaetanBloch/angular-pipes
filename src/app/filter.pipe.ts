@@ -8,7 +8,7 @@ import { Server } from './server.model';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(servers: Server[], filterString: string, propName: string): Server[] {
+  transform(servers: Server[], filterString: string, propName: string = 'status'): Server[] {
     if (servers.length === 0 || filterString === '') {
       return servers;
     }
