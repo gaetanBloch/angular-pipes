@@ -11,25 +11,25 @@ export class AppComponent {
       instanceType: 'medium',
       name: 'Production Server',
       status: 'critical',
-      started: new Date(15, 1, 2017).toLocaleString()
+      started: new Date(1989, 0, 20).toLocaleString()
     },
     {
       instanceType: 'large',
       name: 'User Database',
       status: 'stable',
-      started: new Date(15, 1, 2017).toLocaleString()
+      started: new Date(1989, 0, 20).toLocaleString()
     },
     {
       instanceType: 'small',
       name: 'Development Server',
       status: 'offline',
-      started: new Date(15, 1, 2017).toLocaleString()
+      started: new Date(1989, 0, 20).toLocaleString()
     },
     {
       instanceType: 'small',
       name: 'Testing Environment Server',
       status: 'stable',
-      started: new Date(15, 1, 2017).toLocaleString()
+      started: new Date(1989, 0, 20).toLocaleString()
     }
   ];
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
