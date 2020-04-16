@@ -8,6 +8,7 @@ import { Server } from './server.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  filteredStatus = '';
   servers = [
     new Server('medium', 'Production', 'critical', new Date(1989, 0, 20)),
     new Server('large', 'User Database', 'stable', new Date(1989, 0, 20)),
