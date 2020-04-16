@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Server } from './server.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,30 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   servers = [
-    {
-      instanceType: 'medium',
-      name: 'Production',
-      status: 'critical',
-      started: new Date(1989, 0, 20)
-    },
-    {
-      instanceType: 'large',
-      name: 'User Database',
-      status: 'stable',
-      started: new Date(1989, 0, 20)
-    },
-    {
-      instanceType: 'small',
-      name: 'Development Server',
-      status: 'offline',
-      started: new Date(1989, 0, 20)
-    },
-    {
-      instanceType: 'small',
-      name: 'Testing Environment Server',
-      status: 'stable',
-      started: new Date(1989, 0, 20)
-    }
+    new Server('medium', 'Production', 'critical', new Date(1989, 0, 20)),
+    new Server('large', 'User Database', 'stable', new Date(1989, 0, 20)),
+    new Server('small', 'Development Server', 'offline', new Date(1989, 0, 20)),
+    new Server('small', 'Testing Environment Server', 'stable', new Date(1989, 0, 20))
   ];
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
     return {
