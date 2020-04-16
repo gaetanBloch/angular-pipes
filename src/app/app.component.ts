@@ -21,7 +21,7 @@ export class AppComponent {
     {name: 'Critical', value: 'critical'}
   ];
   servers = [
-    // new Server('medium', 'Production', 'critical', new Date(1989, 0, 20)),
+    new Server('medium', 'Production', 'critical', new Date(1989, 0, 20)),
     new Server('large', 'User Database', 'stable', new Date(1989, 0, 20)),
     new Server('small', 'Development Server', 'offline', new Date(1989, 0, 20)),
     new Server('small', 'Testing Environment Server', 'stable', new Date(1989, 0, 20))
