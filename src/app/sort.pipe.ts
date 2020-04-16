@@ -10,13 +10,11 @@ export class SortPipe implements PipeTransform {
 
   transform(servers: Server[], propName: string = 'name'): Server[] {
     return servers.sort((a, b) => {
-      if (a[propName] < b[propName] ) {
+      if (a[propName] > b[propName] ) {
+        return 1;
+      } else {
         return -1;
       }
-      if (a[propName] > b[propName]) {
-        return 1;
-      }
-      return 0;
     });
   }
 
